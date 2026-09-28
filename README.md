@@ -1,5 +1,4 @@
 # AutoPK
-# AutoPK
 
 A pipeline for extracting pharmacokinetic (PK) data from scientific literature using LLMs.
 

@@ -15,6 +15,7 @@ Each folder is a stage in the pipeline, meant to be run roughly in order.
 - **05_curve_processing** - Splits digitized concentration time CSVs into one sub-CSV per curve, resolves each curve's drug/analyte/dose via caption parsing and metadata matching, and uses an LLM to review curves that rule-based matching can't resolve. Also re-extracts y-axis units directly from figure images.
 - **06_nca_calculation** - Calculates non-compartmental analysis (NCA) parameters (Cmax, Tmax, AUC, half life) from the processed curves. Contains two independent approaches (manifest-based and raw-CSV-based); see each script's docstring for how they differ.
 - **07_smiles_lookup** - Resolves drug names to SMILES chemical structure strings. Contains two independent approaches (via SRI name resolution / node normalizer, and via direct PubChem name lookup); see each script's docstring for how they differ.
+- **08_quality_control** - Audits raw digitized points for must-have fields, runs a Vision-based QC pass comparing extracted CSVs against their source figures, and validates final calculated PK parameters against literature-reported values.
 
 ## Requirements
 
@@ -34,4 +35,4 @@ Run any script with `--help` to see its specific arguments.
 
 ## Status
 
-Actively being cleaned up and reorganized. Folders 08 (quality control) and 09 (utils) are still in progress.
+Actively maintained and continuously updated as the pipeline evolves.
